@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 // Connexion à PostgreSQL
-sequelize = new Sequelize(
+const sequelize = new Sequelize(
   'my_database_i0jd',
   'my_database_i0jd_user', 
   'RH31PCqU7hExC5Kc0aKBrOgJg8rPYc5Z', {
