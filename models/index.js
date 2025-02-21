@@ -9,10 +9,10 @@ const db = {};
 let sequelize;
 
 sequelize = new Sequelize(
-  'my_database_i0jd',
-  'my_database_i0jd_user', 
-  'RH31PCqU7hExC5Kc0aKBrOgJg8rPYc5Z', {
-  host: 'dpg-cus0no3v2p9s73aqk7jg-a',
+  'postgres',
+  'postgres', 
+  'root', {
+  host: '127.0.0.1',
   dialect: 'postgres',
   logging: false, // Désactive les logs SQL (optionnel)
   }
