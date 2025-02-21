@@ -12,13 +12,12 @@ const db = {};
 let sequelize;
 
 sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
-  {
-    host: config.host,
-    dialect: config.dialect,
-    logging: false // Désactive les logs SQL (optionnel)
+  'my_database_i0jd',
+  'my_database_i0jd_user', 
+  'RH31PCqU7hExC5Kc0aKBrOgJg8rPYc5Z', {
+  host: 'dpg-cus0no3v2p9s73aqk7jg-a',
+  dialect: 'postgres',
+  logging: false, // Désactive les logs SQL (optionnel)
   }
 );
 
