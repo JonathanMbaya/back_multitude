@@ -4,16 +4,17 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
+const env = process.env.NODE_ENV || 'development'; // ✅ Définit bien l'environnement
 const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
 
 sequelize = new Sequelize(
-  'my_database_i0jd',
-  'my_database_i0jd_user', 
-  'RH31PCqU7hExC5Kc0aKBrOgJg8rPYc5Z', {
-  host: 'dpg-cus0no3v2p9s73aqk7jg-a',
+  config.database,
+  config.username,
+  config.password, {
+  host: config.host,
   dialect: 'postgres',
   logging: false, // Désactive les logs SQL (optionnel)
   }
