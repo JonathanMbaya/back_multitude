@@ -42,7 +42,6 @@ module.exports = {
 
     // Hash du mot de passe de l'admin par défaut
     const bcrypt = require("bcryptjs");
-    const hashedPassword = await bcrypt.hash("admin1234", 10); // Remplace par un mot de passe sécurisé
 
     // Insérer un utilisateur admin par défaut
     await queryInterface.bulkInsert("User", [
@@ -50,7 +49,7 @@ module.exports = {
         nom: "Admin",
         prenom: "Super",
         email: "admin@example.com",
-        password: hashedPassword,
+        password: bcrypt.hashSync("admin1234", 10),
         role: "admin",
         createdAt: new Date(),
         updatedAt: new Date(),
