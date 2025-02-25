@@ -99,17 +99,27 @@ router.get("/category/:category", async (req, res) => {
 
 // Créer un article
 router.post("/", async (req, res) => {
-  const { error } = articleSchema.validate(req.body);
-  if (error) {
-    return res.status(400).json({ error: error.details[0].message });
-  }
-
   try {
-    const article = await Article.create(req.body);
+    const {titre, extrait, description, text, readTime, datePublication, category, image, video, trend, published_by,} = req.body;
+    const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
+
+    const article = await Article.create({
+      titre,
+      extrait,
+      description,
+      text,
+      readTime,
+      datePublication,
+      category,
+      image,
+      video,
+      trend,
+      published_by,
+    });
+
     res.status(201).json(article);
   } catch (error) {
-    console.error(error);
-    res.status(500).send("Erreur lors de la création de l'article");
+    res.status(500).json({ error: "Erreur lors de la création de l'article" });
   }
 });
 
