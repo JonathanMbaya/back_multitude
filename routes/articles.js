@@ -112,7 +112,7 @@ router.post("/", async (req, res) => {
       video,
       trend,
       published_by,
-    });v
+    });
 
     res.status(201).json(article);
   } catch (error) {
