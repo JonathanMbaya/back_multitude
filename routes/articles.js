@@ -100,22 +100,19 @@ router.get("/category/:category", async (req, res) => {
 // Créer un article
 router.post("/", async (req, res) => {
   try {
-    const {titre, extrait, description, text, readTime, datePublication, category, image, video, trend, published_by,} = req.body;
-    const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
+    const { titre, extrait, description, category, image, video, trend, published_by } = req.body;
 
     const article = await Article.create({
       titre,
       extrait,
       description,
-      text,
-      readTime,
-      datePublication,
+      datePublication: new Date(), // Définit automatiquement la date actuelle
       category,
       image,
       video,
       trend,
       published_by,
-    });
+    });v
 
     res.status(201).json(article);
   } catch (error) {
