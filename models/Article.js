@@ -14,11 +14,9 @@ const Article = sequelize.define("Article", {
   titre: { type: DataTypes.STRING, allowNull: false },
   extrait: { type: DataTypes.TEXT, allowNull: false },
   description: { type: DataTypes.TEXT, allowNull: false },
-  text:  { type: DataTypes.TEXT, allowNull: false },
   image: { type: DataTypes.STRING },
   video: { type: DataTypes.STRING },
   trend: { type: DataTypes.BOOLEAN, defaultValue: false },
-  readTime: {type:DataTypes.STRING, allowNull: true},
   datePublication: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
   published_by: { type: DataTypes.INTEGER, allowNull: false },
 }, {
