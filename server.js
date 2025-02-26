@@ -7,6 +7,7 @@ const authRoutes = require("./routes/auth");
 const articleRoutes = require("./routes/articles");
 const filmRoutes = require("./routes/films");
 const livreRoutes = require("./routes/livres");
+const categoriesRoutes = require("./routes/categories");
 const db = require("./models"); // Vérifie bien que le fichier `models/index.js` est correct
 
 const app = express();
@@ -19,6 +20,7 @@ app.use("/auth", authRoutes);
 app.use("/articles", articleRoutes);
 app.use("/films", filmRoutes);
 app.use("/livres", livreRoutes);
+app.use("/categories", categoriesRoutes);
 
 // 🔥 Synchronisation de la base de données
 db.sequelize
