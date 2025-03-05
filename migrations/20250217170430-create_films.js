@@ -25,7 +25,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      bandeAnnonce: {
+      trailer: {
+        type: Sequelize.STRING,
+      },
+      cover: {
         type: Sequelize.STRING,
       },
       createdAt: {

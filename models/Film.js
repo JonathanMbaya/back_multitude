@@ -14,7 +14,8 @@ const Film = sequelize.define("Film", {
   description: { type: DataTypes.TEXT, allowNull: false },
   type: { type: DataTypes.STRING, allowNull: false },
   dateSortie: { type: DataTypes.DATE, allowNull: false },
-  bandeAnnonce: { type: DataTypes.STRING },
+  trailer: { type: DataTypes.STRING },
+  cover: { type: DataTypes.STRING },
 }, {
   freezeTableName: true, // La table sera nommée exactement "Film"
 });
