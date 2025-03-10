@@ -29,7 +29,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      bandeAnnonce: {
+      cover: {
         type: Sequelize.STRING,
       },
       createdAt: {
