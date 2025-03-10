@@ -3,6 +3,8 @@ require("dotenv").config(); // Charge les variables d’environnement
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
+const compression = require("compression");
+const Redis = require("ioredis");
 const authRoutes = require("./routes/auth");
 const articleRoutes = require("./routes/articles");
 const filmRoutes = require("./routes/films");
@@ -11,9 +13,13 @@ const categoriesRoutes = require("./routes/categories");
 const db = require("./models"); // Vérifie bien que le fichier `models/index.js` est correct
 
 const app = express();
+
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
+app.use(compression()); // Active la compression GZIP
+
+
 
 // Définition des routes
 app.use("/auth", authRoutes);

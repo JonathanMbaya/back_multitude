@@ -18,6 +18,19 @@ const articleSchema = Joi.object({
   published_by: Joi.number().integer().required(),
 });
 
+// Récupérer tous les  articles
+router.get("/search", async (req, res) => {
+  try {
+    const articles = await Article.findAll({
+      attributes: ["id", "titre"],
+    });
+    res.json(articles);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erreur lors de la récupération des articles");
+  }
+});
+
 // Récupérer tous les articles avec catégorie
 router.get("/all", async (req, res) => {
   try {
