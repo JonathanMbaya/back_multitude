@@ -15,7 +15,7 @@ const Livre = sequelize.define("Livre", {
   description: { type: DataTypes.TEXT, allowNull: false },
   type: { type: DataTypes.STRING, allowNull: false },
   datePublication: { type: DataTypes.DATE, allowNull: false },
-  bandeAnnonce: { type: DataTypes.STRING },
+  cover: { type: DataTypes.STRING },
 }, {
   freezeTableName: true  // La table sera nommée "Livre" exactement
 });

@@ -9,7 +9,7 @@ module.exports = {
         description: "Un roman dystopique sur un futur totalitaire.",
         type: "Dystopie",
         datePublication: new Date('1949-06-08'),
-        bandeAnnonce: "https://www.youtube.com/embed/example1984",
+        cover: "https://www.youtube.com/embed/example1984",
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -19,7 +19,7 @@ module.exports = {
         description: "L'épopée fantastique de Tolkien.",
         type: "Fantasy",
         datePublication: new Date('1954-07-29'),
-        bandeAnnonce: "https://www.youtube.com/embed/exampleLOTR",
+        cover: "https://www.youtube.com/embed/exampleLOTR",
         createdAt: new Date(),
         updatedAt: new Date()
       }
